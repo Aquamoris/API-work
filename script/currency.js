@@ -1,7 +1,7 @@
 const resultSum = document.querySelector('.target__result');
 const allCurrencies = document.querySelector('#target__currency');
 
-const requestURL = 'https://api.exchangerate.host/latest?base=USD';
+const requestURL = 'https://api.exchangerate.host/latest?base=USD&date=now';
 
 const usdFormat = new Intl.NumberFormat("en-us", {
     currency: "USD",
@@ -9,7 +9,7 @@ const usdFormat = new Intl.NumberFormat("en-us", {
 });
 
 let optionsCurrencies = ``;
-async function currenciesParseAndAdd() {
+async function currenciesParseAndAdd(resolve, reject) {
     let result = await fetch(requestURL);
     result = await result.json();
 
@@ -18,18 +18,23 @@ async function currenciesParseAndAdd() {
         allCurrencies.append(newOption);
     }
 
+    console.log(result);
+
     return result.rates;
 }
 
-let exchangeRates;
-
 currenciesParseAndAdd().then( currencies => {
-    exchangeRates = currencies;
-    console.log(currencies);
-    console.log(exchangeRates);
+    allCurrencies.addEventListener('change', () => {
+        let currencyValue = allCurrencies.value;
+
+        if (currencyValue != 'None') {
+            let currencyPrice = currencies[currencyValue];
+            resultSum.innerHTML = `&nbsp;${currencyPrice.toFixed(2)}&nbsp;`;
+        } else {
+            resultSum.innerHTML = `&nbsp;Choose the currency&nbsp;`;
+        }
+    })
     }
 );
-
-console.log(exchangeRates)
 
 

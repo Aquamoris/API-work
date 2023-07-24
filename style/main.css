@@ -5,10 +5,11 @@
 }
 
 .wrapper {
-    border: solid thin red;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 5% 0;
+    background-color: silver;
 }
 
 .target {

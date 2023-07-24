@@ -14,7 +14,7 @@ async function f2() {
 
 async function f3() {
     const response = fetch(url + '3');
-    return (await response).json();
+    return (await response).json()
 }
 
 async function go() {
