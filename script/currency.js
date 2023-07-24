@@ -21,6 +21,15 @@ async function currenciesParseAndAdd() {
     return result.rates;
 }
 
-currenciesParseAndAdd().then( currencies => console.log(currencies) );
+let exchangeRates;
+
+currenciesParseAndAdd().then( currencies => {
+    exchangeRates = currencies;
+    console.log(currencies);
+    console.log(exchangeRates);
+    }
+);
+
+console.log(exchangeRates)
 
 

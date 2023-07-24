@@ -5,6 +5,13 @@
 }
 
 .wrapper {
+    border: solid thin red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.target {
     display: flex;
     flex-direction: row;
 }
