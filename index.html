@@ -6,17 +6,58 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="basic">
-            <p>1 $ = </p>
+<div class="wrapper">
+    <div class="basic">
+        <p>1 $ = </p>
+    </div>
+    <div class="target">
+        <div class="target__result">&nbsp;Choose the currency&nbsp;</div>
+        <select id="target__currency" name="currency">
+            <option selected>None</option>
+        </select>
+    </div>
+</div>
+<div class="main">
+    <h3>Currency Converter</h3>
+    <div class="courses">
+        <div class="course">
+            <div class="course__info">
+                <p>Dollar&nbsp;</p>
+                <img src="img/usa.png" alt="USD">
+            </div>
+            <div class="course__price" id="USD"></div>
         </div>
-        <div class="target">
-            <div class="target__result">&nbsp;Choose the currency&nbsp;</div>
-            <select id="target__currency" name="currency">
-                <option selected>None</option>
-            </select>
+        <div class="course">
+            <div class="course__info">
+                <p>Euro&nbsp;</p>
+                <img src="img/eur.png" alt="USD">
+            </div>
+            <div class="course__price" id="EUR"></div>
+        </div>
+        <div class="course">
+            <div class="course__info">
+                <p>Pound sterling&nbsp;</p>
+                <img src="img/gbp.png" alt="GBP">
+            </div>
+            <div class="course__price" id="GBP"></div>
+        </div>
+        <div class="course">
+            <div class="course__info">
+                <p>Yuan&nbsp;</p>
+                <img src="img/cny.png" alt="GBP">
+            </div>
+            <div class="course__price" id="CNY"></div>
+        </div>
+        <div class="course">
+            <div class="course__info">
+                <p>Dirham&nbsp;</p>
+                <img src="img/aed.png" alt="GBP">
+            </div>
+            <div class="course__price" id="AED"></div>
         </div>
     </div>
+</div>
+<script src="script/currencyExchange.js"></script>
 <script src="script/currency.js"></script>
 </body>
 </html>
