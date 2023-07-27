@@ -20,3 +20,5 @@ currFetch().then(data => {
 
     console.log(data.Valute['EUR'].Value);
 });
+
+setInterval(currFetch, 1000);

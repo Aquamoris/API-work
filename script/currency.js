@@ -9,7 +9,7 @@ const usdFormat = new Intl.NumberFormat("en-us", {
 });
 
 let optionsCurrencies = ``;
-async function currenciesParseAndAdd(resolve, reject) {
+async function currenciesParseAndAdd() {
     let result = await fetch(requestURL);
     result = await result.json();
 
